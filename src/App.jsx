@@ -1,12 +1,19 @@
-import Icicle from "./components/Icicle"
-import Navbar from "./components/Navbar"
+import FilterBox from "./components/FilterBox";
+import Icicle from "./components/Icicle";
+import Navbar from "./components/Navbar";
 
 function App() {
+  const handleCheckedState = (checkedState) => {
+    console.log(checkedState);
+  };
 
-  return <div>
-    <Navbar />
-    <Icicle />
-  </div>
+  return (
+    <>
+      <Navbar />
+      <FilterBox onCheckedChange={handleCheckedState} />
+      <Icicle />
+    </>
+  );
 }
 
-export default App
+export default App;
