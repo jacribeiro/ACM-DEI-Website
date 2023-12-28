@@ -5,6 +5,13 @@ import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
 
 function App() {
+
+  const width = screen.width < 600 ? 480 : 928;
+  const height =
+    2 * window.innerHeight ||
+    2 * document.documentElement.clientHeight ||
+    2 * document.body.clientHeight;
+
   const [toggleState, setToggleState] = useState({
     search: false,
     filter: false,
@@ -28,7 +35,7 @@ function App() {
       <Navbar handleToggle={handleToggle} />
       <SearchBox style={{ opacity: toggleState.search ? 1 : 0 }} />
       <FilterBox onCheckedChange={handleCheckedState} style={{ opacity: toggleState.filter ? 1 : 0 }} />
-      <Icicle />
+      <Icicle width={width} height={height} />
     </>
   );
 }
