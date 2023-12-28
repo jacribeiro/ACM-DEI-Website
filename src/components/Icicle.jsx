@@ -1,12 +1,8 @@
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import * as d3 from "d3";
 
-const Icicle = () => {
-  const width = screen.width < 600 ? 480 : 928;
-  const height =
-    2 * window.innerHeight ||
-    2 * document.documentElement.clientHeight ||
-    2 * document.body.clientHeight;
+const Icicle = ({ width, height }) => {
 
   const ref = useRef();
 
@@ -209,5 +205,10 @@ const Icicle = () => {
 
   return <svg ref={ref} />;
 };
+
+Icicle.propTypes = {
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+}
 
 export default Icicle;
