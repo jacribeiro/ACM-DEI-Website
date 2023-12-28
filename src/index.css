@@ -14,6 +14,11 @@ body {
   grid-template-rows: 64px 64px 64px 64px 1fr;
 }
 
+text {
+  font-size: 1.1em;
+  font-family: 'Space Mono', sans-serif;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -40,6 +45,38 @@ header {
 .menu-icon {
   cursor: pointer;
   justify-self: center;
+}
+
+#search-area {
+  width: 23rem;
+  margin-top: 0.7rem;
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: 0.3s linear;
+  place-self: center;
+}
+
+#search-line {
+  display: flex;
+}
+
+#search-reset {
+  margin-top: 0.5rem;
+}
+
+input[type="text"] {
+  font-family: 'Space Mono', sans-serif;
+}
+
+#searchButton {
+  font-weight: bold;
+  font-family: 'Space Mono', sans-serif;
+}
+
+#searchInput {
+  flex-grow: 2;
 }
 
 #legend {
