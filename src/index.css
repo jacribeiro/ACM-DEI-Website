@@ -1,3 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Space Mono', sans-serif;
+  display: grid;
+  grid-template-columns: 4rem 1fr 2fr 1fr;
+  grid-template-rows: 64px 64px 64px 64px 1fr;
+}
+
+text {
+  font-size: 1.1em;
+  font-family: 'Space Mono', sans-serif;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -24,4 +45,108 @@ header {
 .menu-icon {
   cursor: pointer;
   justify-self: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+#search-area {
+  width: 23rem;
+  margin-top: 0.7rem;
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s linear;
+  place-self: center;
+}
+
+#search-line {
+  display: flex;
+}
+
+#search-reset {
+  margin-top: 0.5rem;
+}
+
+input[type="text"] {
+  font-family: 'Space Mono', sans-serif;
+}
+
+#searchButton {
+  font-weight: bold;
+  font-family: 'Space Mono', sans-serif;
+}
+
+#searchInput {
+  flex-grow: 2;
+}
+
+#legend {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  transition: 0.3s linear;
+  font-size: 0.75em;
+  width: 20rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-top: 1.6rem;
+  grid-area: 3 / 2 / 6 / 3;
+  align-self: self-start;
+  justify-self: center;
+}
+
+#legend h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#legend ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.color {
+  box-sizing: border-box;
+  width: 0.6rem;
+  height: 0.63rem;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+
+.checkbox-item {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 2;
+  padding-left: 0.5rem;
+  height: 2.5em;
+}
+
+.checkbox-item label {
+  padding-left: 1rem;
+  width: 13rem;
+}
+
+.reset {
+  color: red;
+  align-self: flex-end;
+  cursor: pointer;
+  padding-bottom: 0.5em;
+}
+
+svg {
+  grid-area: 1 / 3 / 6 / 4;
+  place-self: center;
+  height: 100%;
+  width: 928px;
 }
