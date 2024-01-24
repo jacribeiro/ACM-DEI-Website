@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const FilterBox = ({ onCheckedChange, style }) => {
   const [checkedState, setCheckedState] = useState({
@@ -13,14 +13,41 @@ const FilterBox = ({ onCheckedChange, style }) => {
     noSubarea: false,
   });
 
-  const handleInputChange = (event) => {
-    const { id, checked } = event.target;
-    setCheckedState((prevState) => ({ ...prevState, [id]: checked }));
-    onCheckedChange(checkedState);
+  useEffect(() => {
+    onCheckedChange(makeCheckedObject(checkedState));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [checkedState]);
+
+  const idToLabelMap = {
+    subarea1: "Arquiteturas e Sistemas de Computação",
+    subarea2: "Computação Gráfica e Media Digitais Interativos",
+    subarea3: "Engenharia de Software",
+    subarea4: "Ciência e Tecnologia da Programação",
+    subarea5: "Sistemas de informação",
+    subarea6: "Sistemas inteligentes",
+    multiple: "Múltiplas sub-áreas",
+    noSubarea: "Sem sub-áreas",
   };
 
+  const makeCheckedObject = useCallback((checkedState) => {
+    return Object.keys(checkedState)
+      .filter((key) => checkedState[key])
+      .map((key) => idToLabelMap[key]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleInputChange = useCallback((event) => {
+    const { id, checked } = event.target;
+    setCheckedState((prevState) => {
+      const newState = { ...prevState, [id]: checked };
+      return newState;
+    });
+  }, []);
+
   const resetCheckboxes = () => {
-    setCheckedState({
+    setCheckedState(() => {
+      const newState = {
         subarea1: true,
         subarea2: true,
         subarea3: true,
@@ -28,13 +55,15 @@ const FilterBox = ({ onCheckedChange, style }) => {
         subarea5: true,
         subarea6: true,
         multiple: true,
-        noSubarea: false
+        noSubarea: false,
+      };
+      return newState;
     });
-    onCheckedChange(checkedState);
-  }
+  };
 
   const clearCheckboxes = () => {
-    setCheckedState({
+    setCheckedState(() => {
+      const newState = {
         subarea1: false,
         subarea2: false,
         subarea3: false,
@@ -42,10 +71,11 @@ const FilterBox = ({ onCheckedChange, style }) => {
         subarea5: false,
         subarea6: false,
         multiple: false,
-        noSubarea: false
+        noSubarea: false,
+      };
+      return newState;
     });
-    onCheckedChange(checkedState);
-  }
+  };
 
   return (
     <div id="legend" style={style}>
