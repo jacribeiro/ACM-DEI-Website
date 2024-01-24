@@ -51,17 +51,25 @@ const Icicle = ({ width, height, checkedState }) => {
     // Determina a cor do retângulo, tendo em conta o conteúdo dos arrays
     if (noSubareas && totalSubareas.length === 0) {
       return "#444";
+    } else if (
+      totalSubareas.length > 1 &&
+      totalSubareasCount > 1 &&
+      multiples
+    ) {
+      return multipleSubareasColor;
     } else if (totalSubareas.length > 1 && multiples) {
       return multipleSubareasColor;
-    } else if (totalSubareas.length > 1 && totalSubareasCount > 1) {
-      return multipleSubareasColor;
-    } else if (subareas.length > 1 && subareasCount > 1) {
+    } else if (subareas.length > 1 && subareasCount > 1 && multiples) {
       return multipleSubareasColor;
     } else if (subareas.length > 1 && subareasCount === 1) {
       return colorMap[subareasCommonElement];
     } else if (subareas.length === 1 && checked.includes(subareas[0].name)) {
       return colorMap[subareas[0].name];
-    } else if (descendantsSubareas.length > 1 && descendantsSubareasCount > 1) {
+    } else if (
+      descendantsSubareas.length > 1 &&
+      descendantsSubareasCount > 1 &&
+      multiples
+    ) {
       return multipleSubareasColor;
     } else if (
       descendantsSubareas.length > 1 &&
