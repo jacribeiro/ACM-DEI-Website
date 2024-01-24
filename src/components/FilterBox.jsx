@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useCallback } from "react";
 
-const FilterBox = ({ onCheckedChange, style }) => {
+const FilterBox = ({ onCheckedChange, className }) => {
   const [checkedState, setCheckedState] = useState({
     subarea1: true,
     subarea2: true,
@@ -78,7 +78,7 @@ const FilterBox = ({ onCheckedChange, style }) => {
   };
 
   return (
-    <div id="legend" style={style}>
+    <div id="legend" className={className}>
       <h2>Legenda</h2>
       <ul>
         <li>
@@ -196,7 +196,7 @@ const FilterBox = ({ onCheckedChange, style }) => {
 
 FilterBox.propTypes = {
   onCheckedChange: PropTypes.func.isRequired,
-  style: PropTypes.object,
+  className: PropTypes.string.isRequired,
 };
 
 export default FilterBox;
