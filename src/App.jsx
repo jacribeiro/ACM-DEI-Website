@@ -3,6 +3,7 @@ import FilterBox from "./components/FilterBox";
 import Icicle from "./components/Icicle";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
+import Slideshow from "./components/Slideshow";
 
 function App() {
   const width = screen.width < 600 ? 480 : 928;
@@ -24,7 +25,7 @@ function App() {
     "subarea4",
     "subarea5",
     "subarea6",
-    "multiple"
+    "multiple",
   ]);
 
   const handleToggle = (name) => {
@@ -32,17 +33,19 @@ function App() {
       ...prevState,
       [name]: !prevState[name],
     }));
+    console.log(toggleState);
   };
 
   return (
     <>
       <Navbar handleToggle={handleToggle} />
-      <SearchBox style={{ opacity: toggleState.search ? 1 : 0 }} />
+      <SearchBox className={toggleState.search ? "visible" : "invisible"} />
       <FilterBox
         onCheckedChange={setCheckedState}
-        style={{ opacity: toggleState.filter ? 1 : 0 }}
+        className={toggleState.filter ? "visible" : "invisible"}
       />
       <Icicle width={width} height={height} checkedState={checkedState} />
+      <Slideshow display={toggleState.howTo} handleToggle={handleToggle} />
     </>
   );
 }
