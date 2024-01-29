@@ -28,23 +28,36 @@ function App() {
     "multiple",
   ]);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
   const handleToggle = (name) => {
     setToggleState((prevState) => ({
       ...prevState,
       [name]: !prevState[name],
     }));
-    console.log(toggleState);
   };
 
   return (
     <>
       <Navbar handleToggle={handleToggle} />
-      <SearchBox className={toggleState.search ? "visible" : "invisible"} />
+      <SearchBox
+        className={toggleState.search ? "visible" : "invisible"}
+        onSearch={handleSearch}
+      />
       <FilterBox
         onCheckedChange={setCheckedState}
         className={toggleState.filter ? "visible" : "invisible"}
       />
-      <Icicle width={width} height={height} checkedState={checkedState} />
+      <Icicle
+        width={width}
+        height={height}
+        checkedState={checkedState}
+        searchTerm={searchTerm}
+      />
       <Slideshow display={toggleState.howTo} handleToggle={handleToggle} />
     </>
   );

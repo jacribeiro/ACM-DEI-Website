@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import * as d3 from "d3";
 
-const Icicle = ({ width, height, checkedState }) => {
+const Icicle = ({ width, height, checkedState, searchTerm }) => {
   const ref = useRef();
   const rectRef = useRef(null);
 
@@ -119,6 +119,40 @@ const Icicle = ({ width, height, checkedState }) => {
       }
     }
     return "";
+  }
+
+  /**
+   * Realiza uma pesquisa em profundidade, atribuindo a cor verde aos nós que contêm o termo de pesquisa e aos seus antecessores
+   * @param {node} node
+   * @param {string} searchTerm
+   */
+  function dfsSearchColor(node, searchTerm) {
+    if (node.data.name.toLowerCase().includes(searchTerm)) {
+      node.data.color = "#35db7b";
+      if (node.parent) node.parent.data.color = "#35db7b";
+    } else {
+      node.data.color = "#ccc";
+    }
+    if (node.children) {
+      node.children.forEach((child) => {
+        dfsSearchColor(child, searchTerm, false);
+      });
+    }
+    if (node.parent && node.data.color == "#35db7b") {
+      node.parent.data.color = "#35db7b";
+    }
+  }
+
+  /**
+   * Atualiza as cores dos retângulos, de acordo com o termo de pesquisa
+   */
+  function updateSearchColor() {
+    dfsSearchColor(root, searchTerm);
+
+    const rects = document.querySelectorAll("rect");
+    rects.forEach((rect) => {
+      rect.setAttribute("fill", rect.__data__.data.color);
+    });
   }
 
   useEffect(() => {
@@ -340,13 +374,17 @@ const Icicle = ({ width, height, checkedState }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [height, width, root]);
 
+  // Atualiza a cor dos retângulos de acordo com as checkboxes e o termo de pesquisa
   useEffect(() => {
-    if (rectRef.current) {
-      rectRef.current.attr("fill", (d) => checkboxColor(d, checkedState));
-    }
+    if (!rectRef.current) return;
 
+    if (searchTerm === "") {
+      rectRef.current.attr("fill", (d) => checkboxColor(d, checkedState));
+    } else {
+      updateSearchColor();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checkedState]);
+  }, [checkedState, searchTerm]);
 
   return <svg ref={ref} />;
 };
@@ -355,6 +393,7 @@ Icicle.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   checkedState: PropTypes.array.isRequired,
+  searchTerm: PropTypes.string.isRequired,
 };
 
 export default Icicle;
