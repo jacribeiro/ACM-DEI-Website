@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MaterialSymbol } from "react-material-symbols";
 
 const Slideshow = ({ display, handleToggle }) => {
@@ -34,6 +34,26 @@ const Slideshow = ({ display, handleToggle }) => {
   const prevSlide = () => {
     setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      switch (event.key) {
+        case "ArrowLeft":
+          prevSlide();
+          break;
+        case "ArrowRight":
+          nextSlide();
+          break;
+        case "Escape":
+          if (display) handleToggle("howTo");
+          break;
+        default:
+          break;
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [prevSlide, nextSlide]);
 
   return (
     <div id="overlay" style={{ display: display ? "flex" : "none" }}>
