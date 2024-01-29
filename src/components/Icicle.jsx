@@ -255,6 +255,14 @@ const Icicle = ({ width, height, checkedState }) => {
 
     let focus = root;
 
+    document.addEventListener("keydown", detectKeyPress);
+
+    function detectKeyPress(event) {
+      if (event.key === "Escape") {
+        resetLayout();
+      }
+    }
+
     /**
      * Função chamada quando se clica num retângulo, atualiza o layout
      * @param {*} event
@@ -320,6 +328,13 @@ const Icicle = ({ width, height, checkedState }) => {
       const firstLine = words.slice(0, wordCount).join(" ");
       const secondLine = words.slice(wordCount).join(" ");
       return [firstLine, secondLine];
+    }
+
+    /**
+     * Função chamada ao pressionar a tecla 'esc', que recupera o layout original
+     */
+    function resetLayout() {
+      clicked(null, root);
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
