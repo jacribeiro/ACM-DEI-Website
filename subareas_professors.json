@@ -1,0 +1,149 @@
+{
+   "professors": [
+        { 
+            "name": "Sérgio Nunes",
+            "primary": "Sistemas de Informação",
+            "secondary": "Computação Gráfica e Media Digitais Interativos"
+        },
+        {
+            "name": "João Moreira",
+            "primary": "Sistemas Inteligentes",
+            "secondary": "Sistemas de Informação"
+        },
+        {
+            "name": "João Cardoso",
+            "primary": "Arquiteturas e Sistemas de Computação",
+            "secondary": "Ciência e Tecnologia da Programação"
+        },
+        {
+            "name": "Nuno Macedo",
+            "primary": "Engenharia de Software",
+            "secondary": "Ciência e Tecnologia da Programação"
+        },
+        {
+            "name": "A. Augusto de Sousa",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": null
+        },
+        {
+            "name": "Manuel Firmino Torres",
+            "primary": "Outros",
+            "secondary": null
+        },
+        {
+            "name": "João Bispo",
+            "primary": "Ciência e Tecnologia da Programação",
+            "secondary": "Engenharia de Software"
+        },
+        {
+            "name": "Rui Camacho",
+            "primary": "Sistemas Inteligentes",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Pedro Diniz",
+            "primary": "Ciência e Tecnologia da Programação",
+            "secondary": "Arquiteturas e Sistemas de Computação"
+        },
+        {
+            "name": "André Restivo",
+            "primary": "Engenharia de Software",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Daniel Mendes",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": null
+        },
+        {
+            "name": "Carla Teixeira Lopes",
+            "primary": "Sistemas de Informação",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Luís Filipe Teixeira",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Gabriel David",
+            "primary": "Sistemas de Informação",
+            "secondary": null
+        },
+        {
+            "name": "Henrique Lopes Cardoso",
+            "primary": "Sistemas Inteligentes",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Jorge Silva",
+            "primary": "Sistemas Inteligentes",
+            "secondary": null
+        },
+        {
+            "name": "Jorge Barbosa",
+            "primary": "Arquiteturas e Sistemas de Computação",
+            "secondary": null
+        },
+        {
+            "name": "António Lucas Soares",
+            "primary": "Sistemas de Informação",
+            "secondary": "Outros"
+        },
+        {
+            "name": "Filipe Correia",
+            "primary": "Engenharia de Software",
+            "secondary": null
+        },
+        {
+            "name": "Gil Gonçalves",
+            "primary": "Sistemas de Informação",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Jácome Cunha",
+            "primary": "Engenharia de Software",
+            "secondary": "Ciência e Tecnologia da Programação"
+        },
+        {
+            "name": "Daniel Silva",
+            "primary": "Sistemas Inteligentes",
+            "secondary": null
+        },
+        {
+            "name": "Rui Rodrigues",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": null
+        },
+        {
+            "name": "Rui Maranhão",
+            "primary": "Engenharia de Software",
+            "secondary": "Sistemas Inteligentes"
+        },
+        {
+            "name": "Ademar Aguiar",
+            "primary": "Engenharia de Software",
+            "secondary": null
+        },
+        {
+            "name": "Ana Paiva",
+            "primary": "Engenharia de Software",
+            "secondary": "Ciência e Tecnologia da Programação"
+        },
+        {
+            "name": "Pedro Ferreira do Souto",
+            "primary": "Arquiteturas e Sistemas de Computação",
+            "secondary": null
+        },
+        {
+            "name": "João Pascoal Faria",
+            "primary": "Engenharia de Software",
+            "secondary": "Ciência e Tecnologia da Programação"
+        },
+        {
+            "name": "António Coelho",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": "Outros"
+        }
+    ]
+}
