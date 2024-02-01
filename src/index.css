@@ -177,6 +177,14 @@ input[type="text"] {
   margin: 0;
 }
 
+#legend ul li {
+  list-style: none;
+}
+
+.non-clickable {
+  pointer-events: none;
+}
+
 .color {
   box-sizing: border-box;
   width: 0.6rem;
