@@ -177,15 +177,12 @@ input[type="text"] {
   margin: 0;
 }
 
-ul {
+#legend ul li {
   list-style: none;
-  padding: 0;
 }
 
-#legend ul li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
+.non-clickable {
+  pointer-events: none;
 }
 
 .color {
@@ -194,6 +191,7 @@ ul {
   height: 0.63rem;
   background-size: 100% 100%;
   vertical-align: middle;
+  margin-top: 0.6rem;
 }
 
 .checkbox-item {
