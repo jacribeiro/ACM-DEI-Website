@@ -1,149 +1,330 @@
 {
-   "professors": [
+    "professors": [
         { 
             "name": "Sérgio Nunes",
             "primary": "Sistemas de Informação",
-            "secondary": "Computação Gráfica e Media Digitais Interativos"
+            "secondary": "Computação Gráfica e Media Digitais Interativos",
+            "topics": ["Information retrieval", 
+                    "Human computer interaction (HCI)",
+                    "Interaction design", "Natural language processing",
+                    "Digital libraries and archives"]
         },
         {
             "name": "João Moreira",
             "primary": "Sistemas Inteligentes",
-            "secondary": "Sistemas de Informação"
+            "secondary": "Sistemas de Informação",
+            "topics": ["Surveys and overviews",
+                    "General conference proceedings",
+                    "Nonparametric statistics",
+                    "Data streaming",
+                    "Ranking",
+                    "Supervised learning by classification",
+                    "Supervised learning by regression",
+                    "Anomaly detection",
+                    "Batch learning",
+                    "Online learning settings",
+                    "Active learning settings",
+                    "Semi-supervised learning settings",
+                    "Neural networks",
+                    "Instance-based learning",
+                    "Ensemble methods",
+                    "Feature selection",
+                    "Agriculture"]
         },
         {
             "name": "João Cardoso",
             "primary": "Arquiteturas e Sistemas de Computação",
-            "secondary": "Ciência e Tecnologia da Programação"
+            "secondary": "Ciência e Tecnologia da Programação",
+            "topics": ["Multicore architectures",
+                    "Embedded systems",
+                    "Hardware-software codesign",
+                    "Compilers",
+                    "Models of computation",
+                    "Ubiquitous and mobile computing design and evaluation methods"]
         },
         {
             "name": "Nuno Macedo",
             "primary": "Engenharia de Software",
-            "secondary": "Ciência e Tecnologia da Programação"
+            "secondary": "Ciência e Tecnologia da Programação",
+            "topics": ["Formal software verification",
+                    "Software testing and debugging",
+                    "Specification languages",
+                    "Correctness",
+                    "Formal methods",
+                    "Software system models",
+                    "Model verification and validation",
+                    "Program specifications",
+                    "Program verification",
+                    "Computer-aided design",
+                    "Robotics",
+                    "Computer-assisted instruction",
+                    "Software engineering education"]
         },
         {
             "name": "A. Augusto de Sousa",
             "primary": "Computação Gráfica e Media Digitais Interativos",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Computer games",
+                    "Graphics systems and interfaces",
+                    "Rendering",
+                    "Mixed / augmented reality",
+                    "Virtual reality",
+                    "Computer graphics",
+                    "Accessibility",
+                    "Graphical user interfaces",
+                    "Interaction paradigms",
+                    "Interaction techniques",
+                    "Interactive systems and tools",
+                    "Human computer interaction (HCI)",
+                    "Visualization"]
         },
         {
             "name": "Manuel Firmino Torres",
             "primary": "Outros",
-            "secondary": null
+            "secondary": null,
+            "topics": []
         },
         {
             "name": "João Bispo",
             "primary": "Ciência e Tecnologia da Programação",
-            "secondary": "Engenharia de Software"
+            "secondary": "Engenharia de Software",
+            "topics": ["Compilers",
+                    "Retargetable compiles",
+                    "Source code generation",
+                    "Development frameworks and environments",
+                    "Software maintenance tools",
+                    "Software testing and debugging",
+                    "Hardware accelerators",
+                    "Vulnerability scanners",
+                    "Metrics"]
         },
         {
             "name": "Rui Camacho",
             "primary": "Sistemas Inteligentes",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Machine learning algorithms"]
         },
         {
             "name": "Pedro Diniz",
             "primary": "Ciência e Tecnologia da Programação",
-            "secondary": "Arquiteturas e Sistemas de Computação"
+            "secondary": "Arquiteturas e Sistemas de Computação",
+            "topics": ["Compilers"]
         },
         {
             "name": "André Restivo",
             "primary": "Engenharia de Software",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Embedded systems",
+                    "Neural networks",
+                    "Software testing and debugging",
+                    "Automatic programming"]
         },
         {
             "name": "Daniel Mendes",
             "primary": "Computação Gráfica e Media Digitais Interativos",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Graphics systems and interfaces"]
         },
         {
             "name": "Carla Teixeira Lopes",
             "primary": "Sistemas de Informação",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Information retrieval",
+                    "Human computer interaction (HCI)",
+                    "Health care information systems",
+                    "Health informatics",
+                    "Artificial intelligence"]
         },
         {
             "name": "Luís Filipe Teixeira",
             "primary": "Computação Gráfica e Media Digitais Interativos",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Computer vision",
+                    "Machine learning",
+                    "Life and medical sciences",
+                    "Ubiquitous and mobile computing"]
         },
         {
             "name": "Gabriel David",
             "primary": "Sistemas de Informação",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Digital libraries and archives",
+                    "Data warehouses"]
         },
         {
             "name": "Henrique Lopes Cardoso",
             "primary": "Sistemas Inteligentes",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Natural language processing",
+                    "Machine learning",
+                    "Distributed artificial intelligence",
+                    "Artificial intelligence"]
         },
         {
             "name": "Jorge Silva",
             "primary": "Sistemas Inteligentes",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Computer vision"]
         },
         {
             "name": "Jorge Barbosa",
             "primary": "Arquiteturas e Sistemas de Computação",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Cloud computing",
+                    "Parallel algorithms",
+                    "MapReduce algorithms"]
         },
         {
             "name": "António Lucas Soares",
             "primary": "Sistemas de Informação",
-            "secondary": "Outros"
+            "secondary": "Outros",
+            "topics": ["Enterprise information systems",
+                    "Enterprise architecture modeling",
+                    "Enterprise ontologies, taxonomies and vocabularies",
+                    "Business-IT alignment"]
         },
         {
             "name": "Filipe Correia",
             "primary": "Engenharia de Software",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Designing software",
+                    "Software development methods",
+                    "Software post-development issues",
+                    "Visual languages",
+                    "Software maintenance tools",
+                    "System description languages",
+                    "Cloud computing",
+                    "Software architectures",
+                    "Model-driven software engineering"]
         },
         {
             "name": "Gil Gonçalves",
             "primary": "Sistemas de Informação",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Sensors and actuators",
+                    "Robotic autonomy",
+                    "Data analytics",
+                    "Process control systems",
+                    "Enterprise applications",
+                    "Cross-validation"]
         },
         {
             "name": "Jácome Cunha",
             "primary": "Engenharia de Software",
-            "secondary": "Ciência e Tecnologia da Programação"
+            "secondary": "Ciência e Tecnologia da Programação",
+            "topics": ["Integrated and visual development environments", 
+                    "Visual languages",
+                    "Specification languages",
+                    "Software evolution",
+                    "Software reverse engineering",
+                    "Accessibility systems and tools",
+                    "Model development and analysis"]
         },
         {
             "name": "Daniel Silva",
             "primary": "Sistemas Inteligentes",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Distributed artificial intelligence",
+                       "Modeling and simulation",
+                       "Visualization application domains"]
         },
         {
             "name": "Rui Rodrigues",
             "primary": "Computação Gráfica e Media Digitais Interativos",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Computer games",
+                       "Graphics systems and interfaces",
+                       "Rendering",
+                       "Mixed / augmented reality",
+                       "Virtual reality",
+                       "Computer graphics",
+                       "Usability testing",
+                       "HCI design and evaluation methods",
+                       "Haptic devices",
+                       "Touch screens",
+                       "Interacion devices",
+                       "Collaborative interaction",
+                       "Graphical user interfaces",
+                       "Interaction paradigms",
+                       "Gestural input",
+                       "Interaction techniques",
+                       "Interactive systems and tools",
+                       "Human computer interaction (HCI)",
+                       "Interaction design",
+                       "Ubiquitous and mobile computing systems and tools",
+                       "Visualization",
+                       "Interaction design process and methods",
+                       "Multimedia content design",
+                       "Interactive games",
+                       "Virtual worlds software"]
         },
         {
             "name": "Rui Maranhão",
             "primary": "Engenharia de Software",
-            "secondary": "Sistemas Inteligentes"
+            "secondary": "Sistemas Inteligentes",
+            "topics": ["Software security engineering",
+                       "Quantum computation",
+                       "Software testing and debugging"]
         },
         {
             "name": "Ademar Aguiar",
             "primary": "Engenharia de Software",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Software system structures",
+                       "Software creation and management"]
         },
         {
             "name": "Ana Paiva",
             "primary": "Engenharia de Software",
-            "secondary": "Ciência e Tecnologia da Programação"
+            "secondary": "Ciência e Tecnologia da Programação",
+            "topics": ["Development frameworks and environments",
+                       "Domain specific languages",
+                       "Software verification and validation",
+                       "Software reverse engineering",
+                       "Requirements analysis",
+                       "Program reasoning",
+                       "Formal methods",
+                       "Model-driven software engineering",
+                       "Abrstraction, modeling and modularity",
+                       "Education",
+                       "Ubiquitous and mobile computing design and evaluation methods"]
         },
         {
             "name": "Pedro Ferreira do Souto",
             "primary": "Arquiteturas e Sistemas de Computação",
-            "secondary": null
+            "secondary": null,
+            "topics": ["Real-time system specification",
+                       "Real-time operating systems",
+                       "Real-time schedulability",
+                       "Intrusion detection systems",
+                       "Parallel algorithms"]
         },
         {
             "name": "João Pascoal Faria",
             "primary": "Engenharia de Software",
-            "secondary": "Ciência e Tecnologia da Programação"
+            "secondary": "Ciência e Tecnologia da Programação",
+            "topics": ["Software and its engineering",
+                       "Software verification and validation"]
         },
         {
             "name": "António Coelho",
             "primary": "Computação Gráfica e Media Digitais Interativos",
-            "secondary": "Outros"
+            "secondary": "Outros",
+            "topics": ["Interactive learning environments",
+                       "Health informatics",
+                       "Graphics systems and interfaces",
+                       "Mixed / augmented reality",
+                       "Virtual reality",
+                       "Computer graphics",
+                       "Accessibility",
+                       "Usability testing",
+                       "HCI design and evaluation methods",
+                       "Human computer interaction (HCI)",
+                       "Geographic information systems",
+                       "Location based services",
+                       "Interactive games",
+                       "Virtual worlds training simulations",
+                       "Virtual worlds software"]
         }
     ]
 }
