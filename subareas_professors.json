@@ -108,7 +108,8 @@
             "name": "Pedro Diniz",
             "primary": "Ciência e Tecnologia da Programação",
             "secondary": "Arquiteturas e Sistemas de Computação",
-            "topics": ["Compilers"]
+            "topics": ["Compilers",
+                       "Applied computing"]
         },
         {
             "name": "André Restivo",
@@ -325,6 +326,53 @@
                        "Interactive games",
                        "Virtual worlds training simulations",
                        "Virtual worlds software"]
+        },
+        {
+            "name": "Gilberto Bernardes",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": "Sistemas de Informação",
+            "topics": ["Sound and music computing",
+                       "Music retrieval"]
+        },
+        {
+            "name": "Luís Paulo Reis",
+            "primary": "Sistemas Inteligentes",
+            "secondary": null,
+            "topics": ["Artificial intelligence",
+                       "Machine learning",
+                       "Modeling and simulation"]
+        },
+        {
+            "name": "Alexandre Miguel Barbosa",
+            "primary": "Computação Gráfica e Media Digitais Interativos",
+            "secondary": "Sistemas de Informação",
+            "topics": ["Graphics systems and interfaces",
+                       "Empirical studies in visualization",
+                       "Spatial-temporal systems"]
+        },
+        {
+            "name": "José Campos",
+            "primary": "Engenharia de Software",
+            "secondary": null,
+            "topics": ["Software testing and debugging",
+                       "Search-based software engineering",
+                       "Empirical software validation"]
+        },
+        {
+            "name": "Mariana Curado Malta",
+            "primary": "Sistemas de Informação",
+            "secondary": "Sistemas de Informação",
+            "topics": ["Digital libraries and archives",
+                       "Database design and models",
+                       "Human computer interaction (HCI)"]
+        },
+        {
+            "name": "Carlos Baquero",
+            "primary": "Arquiteturas e Sistemas de Computação",
+            "secondary": "Ciência e Tecnologia da Programação",
+            "topics": ["Fault-tolerant network topologies",
+                       "Data structures",
+                       "Distributed algorithms"]
         }
     ]
 }
