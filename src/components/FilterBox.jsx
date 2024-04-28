@@ -1,54 +1,5 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useCallback } from "react";
-import { styled } from "@mui/material/styles";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import MuiAccordion from "@mui/material/Accordion";
-import MuiAccordionSummary from "@mui/material/AccordionSummary";
-import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import ProfessorList from "./ProfessorList";
-
-// Processamento dos professores e subáreas
-
-const Accordion = styled((props) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(() => ({
-  "&::before": {
-    display: "none",
-  },
-}));
-
-const TransparentIcon = () => (
-  <div style={{ width: "1.3rem", height: "1.3rem" }} />
-);
-
-const AccordionSummary = styled(({ showIcon = true, ...props }) => (
-  <MuiAccordionSummary
-    expandIcon={
-      showIcon ? (
-        <ArrowRightIcon sx={{ fontSize: "1.3rem" }} />
-      ) : (
-        <TransparentIcon />
-      )
-    }
-    {...props}
-  />
-))(({ theme }) => ({
-  flexDirection: "row-reverse",
-  display: "flex",
-  alignItems: "center",
-  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-    transform: "rotate(90deg)",
-  },
-  "& .MuiAccordionSummary-content": {
-    margin: 0,
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-  },
-}));
-
-const AccordionDetails = styled(MuiAccordionDetails)(() => ({
-  padding: 0,
-}));
 
 const FilterBox = ({ onCheckedChange, className }) => {
   const [checkedState, setCheckedState] = useState({
@@ -61,63 +12,6 @@ const FilterBox = ({ onCheckedChange, className }) => {
     multiple: true,
     noSubarea: false,
   });
-
-  const [subareas_professors, setSubareasProfessors] = useState({
-    "Arquiteturas e Sistemas de Computação": {
-      primary: [],
-      secondary: [],
-    },
-    "Computação Gráfica e Media Digitais Interativos": {
-      primary: [],
-      secondary: [],
-    },
-    "Engenharia de Software": {
-      primary: [],
-      secondary: [],
-    },
-    "Ciência e Tecnologia da Programação": {
-      primary: [],
-      secondary: [],
-    },
-    "Sistemas de Informação": {
-      primary: [],
-      secondary: [],
-    },
-    "Sistemas Inteligentes": {
-      primary: [],
-      secondary: [],
-    },
-  });
-
-  useEffect(() => {
-    fetch("/subareas_professors.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const professors = data.professors;
-        const newSubareasProfessors = JSON.parse(
-          JSON.stringify(subareas_professors)
-        );
-
-        for (const professor of professors) {
-          if (Object.keys(newSubareasProfessors).includes(professor.primary)) {
-            newSubareasProfessors[professor.primary].primary.push(
-              professor.name
-            );
-          }
-          if (
-            Object.keys(newSubareasProfessors).includes(professor.secondary)
-          ) {
-            newSubareasProfessors[professor.secondary].secondary.push(
-              professor.name
-            );
-          }
-        }
-        setSubareasProfessors(newSubareasProfessors);
-      })
-      .catch((error) =>
-        console.error("Could not read professors file:", error)
-      );
-  }, []);
 
   useEffect(() => {
     onCheckedChange(makeCheckedObject(checkedState));
@@ -186,8 +80,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
   return (
     <div id="legend" className={className}>
       <h2>Legenda</h2>
-      <Accordion>
-        <AccordionSummary>
+      <ul>
+        <li>
           <span className="color" style={{ backgroundColor: "#498b49" }}></span>
           <div className="checkbox-item">
             <label htmlFor="subarea1">
@@ -200,15 +94,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ProfessorList
-            items={subareas_professors["Arquiteturas e Sistemas de Computação"]}
-          />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#f2be22" }}></span>
           <div className="checkbox-item">
             <label htmlFor="subarea2">
@@ -221,19 +108,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ProfessorList
-            items={
-              subareas_professors[
-                "Computação Gráfica e Media Digitais Interativos"
-              ]
-            }
-          />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#ff7b2f" }}></span>
           <div className="checkbox-item">
             <label htmlFor="subarea3">Engenharia de Software</label>
@@ -244,15 +120,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ProfessorList
-            items={subareas_professors["Engenharia de Software"]}
-          />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#fc8bba" }}></span>
           <div className="checkbox-item">
             <label htmlFor="subarea4">
@@ -265,15 +134,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ProfessorList
-            items={subareas_professors["Ciência e Tecnologia da Programação"]}
-          />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#146c94" }}></span>
           <div className="checkbox-item">
             <label htmlFor="subarea5">Sistemas de informação</label>
@@ -284,18 +146,11 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ProfessorList
-            items={subareas_professors["Sistemas de Informação"]}
-          />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#dd98e4" }}></span>
           <div className="checkbox-item">
-            <label htmlFor="subarea6">Sistemas Inteligentes</label>
+            <label htmlFor="subarea6">Sistemas inteligentes</label>
             <input
               type="checkbox"
               id="subarea6"
@@ -303,13 +158,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-        <AccordionDetails>
-          <ProfessorList items={subareas_professors["Sistemas Inteligentes"]} />
-        </AccordionDetails>
-      </Accordion>
-      <Accordion className="non-clickable">
-        <AccordionSummary showIcon={false}>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#6ab0ff" }}></span>
           <div className="checkbox-item">
             <label htmlFor="multiple">Múltiplas sub-áreas</label>
@@ -320,10 +170,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-      </Accordion>
-      <Accordion className="non-clickable">
-        <AccordionSummary showIcon={false}>
+        </li>
+        <li>
           <span className="color" style={{ backgroundColor: "#444" }}></span>
           <div className="checkbox-item">
             <label htmlFor="noSubarea">Sem sub-áreas</label>
@@ -334,8 +182,8 @@ const FilterBox = ({ onCheckedChange, className }) => {
               onChange={handleInputChange}
             />
           </div>
-        </AccordionSummary>
-      </Accordion>
+        </li>
+      </ul>
       <span id="legend-reset" className="reset" onClick={resetCheckboxes}>
         Selecionar todos
       </span>
