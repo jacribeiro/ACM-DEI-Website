@@ -4,6 +4,7 @@ import Icicle from "./components/Icicle";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
 import Slideshow from "./components/Slideshow";
+import ProfessorBox from "./components/ProfessorBox";
 
 function App() {
   const width = screen.width < 600 ? 480 : 928;
@@ -52,6 +53,7 @@ function App() {
         onCheckedChange={setCheckedState}
         className={toggleState.filter ? "visible" : "invisible"}
       />
+      <ProfessorBox className={toggleState.filter ? "visible" : "invisible"} />
       <Icicle
         width={width}
         height={height}

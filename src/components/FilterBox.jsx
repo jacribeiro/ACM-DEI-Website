@@ -78,7 +78,7 @@ const FilterBox = ({ onCheckedChange, className }) => {
   };
 
   return (
-    <div id="legend" className={className}>
+    <div id="subarea-box" className={`filter ${className}`}>
       <h2>Legenda</h2>
       <ul>
         <li>
