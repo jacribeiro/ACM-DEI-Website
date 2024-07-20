@@ -2,7 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import * as d3 from "d3";
 
-const Icicle = ({ width, height, checkedState, searchTerm }) => {
+const Icicle = ({
+  width,
+  height,
+  subareaCheckedState,
+  professorCheckedState,
+  searchTerm,
+}) => {
   const ref = useRef();
   const rectRef = useRef(null);
 
@@ -49,6 +55,7 @@ const Icicle = ({ width, height, checkedState, searchTerm }) => {
     );
 
     // Determina a cor do retângulo, tendo em conta o conteúdo dos arrays
+
     if (noSubareas && totalSubareas.length === 0) {
       return "#444";
     } else if (
@@ -254,7 +261,7 @@ const Icicle = ({ width, height, checkedState, searchTerm }) => {
 
     rectRef.current = rect;
 
-    rect.attr("fill", (d) => checkboxColor(d, checkedState));
+    rect.attr("fill", (d) => checkboxColor(d, subareaCheckedState));
 
     const text = cell
       .append("text")
@@ -379,12 +386,14 @@ const Icicle = ({ width, height, checkedState, searchTerm }) => {
     if (!rectRef.current) return;
 
     if (searchTerm === "") {
-      rectRef.current.attr("fill", (d) => checkboxColor(d, checkedState));
+      rectRef.current.attr("fill", (d) =>
+        checkboxColor(d, subareaCheckedState)
+      );
     } else {
       updateSearchColor();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [checkedState, searchTerm]);
+  }, [subareaCheckedState, searchTerm]);
 
   return <svg ref={ref} />;
 };
@@ -392,7 +401,8 @@ const Icicle = ({ width, height, checkedState, searchTerm }) => {
 Icicle.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
-  checkedState: PropTypes.array.isRequired,
+  subareaCheckedState: PropTypes.array.isRequired,
+  professorCheckedState: PropTypes.object.isRequired,
   searchTerm: PropTypes.string.isRequired,
 };
 

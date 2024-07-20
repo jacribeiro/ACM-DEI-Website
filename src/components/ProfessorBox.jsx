@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import subareasProfessors from "../../subareas_professors.json";
 
-const ProfessorBox = ({ className }) => {
+const ProfessorBox = ({ className, professors }) => {
   const [checkedState, setCheckedState] = useState({});
 
   useEffect(() => {
     const initialState = {};
-    subareasProfessors.professors.forEach((professor) => {
+    professors.forEach((professor) => {
       initialState[professor.name] = false;
     });
     setCheckedState(initialState);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleInputChange = (event) => {
@@ -25,13 +25,13 @@ const ProfessorBox = ({ className }) => {
     <div id="professor-box" className={`filter ${className}`}>
       <h2>Professores</h2>
       <ul>
-        {subareasProfessors.professors.map((professor) => (
+        {professors.map((professor) => (
           <li className="checkbox-item" key={professor.name}>
             <label htmlFor={professor.name}>{professor.name}</label>
             <input
               type="checkbox"
-              id={professor.id}
-              checked={checkedState[professor.id]}
+              id={professor.name}
+              checked={checkedState[professor.name]}
               onChange={handleInputChange}
             />
           </li>
@@ -43,6 +43,14 @@ const ProfessorBox = ({ className }) => {
 
 ProfessorBox.propTypes = {
   className: PropTypes.string.isRequired,
+  professors: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      primary: PropTypes.string.isRequired,
+      secondary: PropTypes.string,
+      topics: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
 };
 
 export default ProfessorBox;

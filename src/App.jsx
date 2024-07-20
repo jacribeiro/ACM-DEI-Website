@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilterBox from "./components/FilterBox";
 import Icicle from "./components/Icicle";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
 import Slideshow from "./components/Slideshow";
 import ProfessorBox from "./components/ProfessorBox";
+import subareasProfessors from "../subareas_professors.json";
 
 function App() {
   const width = screen.width < 600 ? 480 : 928;
@@ -19,7 +20,7 @@ function App() {
     howTo: false,
   });
 
-  const [checkedState, setCheckedState] = useState([
+  const [subareaCheckedState, setSubareaCheckedState] = useState([
     "subarea1",
     "subarea2",
     "subarea3",
@@ -29,7 +30,17 @@ function App() {
     "multiple",
   ]);
 
+  const [professorCheckedState, setProfessorCheckedState] = useState({});
+
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    const initialState = {};
+    subareasProfessors.professors.forEach((professor) => {
+      initialState[professor.name] = false;
+    });
+    setProfessorCheckedState(initialState);
+  }, []);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
@@ -50,14 +61,19 @@ function App() {
         onSearch={handleSearch}
       />
       <FilterBox
-        onCheckedChange={setCheckedState}
+        onCheckedChange={setSubareaCheckedState}
         className={toggleState.filter ? "visible" : "invisible"}
       />
-      <ProfessorBox className={toggleState.filter ? "visible" : "invisible"} />
+      <ProfessorBox
+        onCheckedChange={setProfessorCheckedState}
+        className={toggleState.filter ? "visible" : "invisible"}
+        professors={subareasProfessors.professors}
+      />
       <Icicle
         width={width}
         height={height}
-        checkedState={checkedState}
+        subareaCheckedState={subareaCheckedState}
+        professorCheckedState={professorCheckedState}
         searchTerm={searchTerm}
       />
       <Slideshow display={toggleState.howTo} handleToggle={handleToggle} />
